@@ -5,13 +5,19 @@ import static org.junit.Assert.*;
 
 public class QueueTest {
 
+
+    //Test Queue
+    Queue queue = new Queue(3);
+
     @Test(expected = IllegalArgumentException.class)
     public void testConstructor(){
         Queue q = new Queue(0);
     }
 
-    //Test Queue
-    Queue queue = new Queue(3);
+    @Test(expected = IllegalStateException.class)
+    public void testEmptyQueueException(){
+        queue.dequeue();
+    }
 
     @Test
     public void testInputOverride(){
@@ -34,8 +40,5 @@ public class QueueTest {
         assertEquals(3,queue.dequeue());
     }
 
-    @Test(expected = IllegalStateException.class)
-    public void testEmptyQueueException(){
-        queue.dequeue();
-    }
+
 }
