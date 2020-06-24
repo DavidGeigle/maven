@@ -40,7 +40,7 @@ public class BaseResidentService implements ResidentService {
 
   /**
    * @param filterResident
-   * @return
+   * @return filteredResident
    */
   @Override
 	public List<Resident> getFilteredResidentsList(Resident filterResident) {
